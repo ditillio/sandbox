@@ -17,7 +17,7 @@ title: Alfredo di Dillio
 email: alfredoditillio@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Notes on microeconomics for Bocconi first-year students
-baseurl: "/ebook" # the subpath of your site, e.g. /blog
+baseurl: "/sandbox" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
