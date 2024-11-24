@@ -32,7 +32,7 @@ layout:
       - Curve:
           fn: 20+(x)/100
           color: Pink
-          max: 4450
+          max: 4350
           strokeWidth: 3.5
           position: c
           label:
@@ -83,10 +83,19 @@ layout:
           strokeWidth: 3
           lineStyle: dashed
 
+# marginal labor cost shadow
+      - Line:
+          yIntercept: 20
+          max: 3900
+          slope: 0.02
+          color: Orange
+          strokeWidth: 0.75
+          lineStyle: dashed
+
 # marginal labor revenue
       - Line:
           yIntercept: 80
-          max: 4300
+          max: 4200
           slope: -0.01
           color: LightBlue
           strokeWidth: 2.5
@@ -95,14 +104,6 @@ layout:
             text: MLR
             x: 4400
             bgcolor: none
-# marginal labor cost shadow
-      - Line:
-          yIntercept: 20
-          max: 
-          slope: 0.02
-          color: Orange
-          strokeWidth: 0.75
-          lineStyle: dashed
 
 # minimum wage
       - Line:
@@ -166,6 +167,28 @@ layout:
           color: Black
           r: 0
 
+# deadweight loss
+      - Area:
+          fn1: 80-(x)/100
+          fn2: 20+(x)/100
+          fill: Lightgray
+          min: 2000
+          max: 3000
+          show: params.minwage <= 40
+      - Area:
+          fn1: 80-(x)/100
+          fn2: 20+(x)/100
+          fill: Lightgray
+          min: calcs.L0
+          max: 3000
+          show: params.minwage > 40 && params.minwage <=50
+      - Area:
+          fn1: 80-(x)/100
+          fn2: 20+(x)/100
+          fill: Lightgray
+          min: (100)*(80-params.minwage)
+          max: 3000
+          show: params.minwage > 50
 
 
 
